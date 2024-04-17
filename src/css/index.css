@@ -1,0 +1,52 @@
+body {
+  background-color: #edf1f4;
+  color: #adb6c7;
+}
+
+.app {
+  font-family: sans-serif;
+}
+.app h1 {
+  color: #49596a;
+}
+.app p {
+  color: #adb6c7;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+  background-color: #ffffff;
+}
+.header .heading {
+  font-size: 2rem;
+}
+.header .icon {
+  color: #adb6c7;
+  font-size: 2rem;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+.card .top .left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+}/*# sourceMappingURL=index.css.map */

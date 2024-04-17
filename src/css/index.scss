@@ -1,0 +1,40 @@
+@import "mixin";
+@import "variable";
+
+body{
+    background-color: $bg-color;
+    color: $text-small-color;
+
+}
+
+.app{
+ font-family: $text-font;
+ h1{
+    color: $text-big-color;
+ }
+ p{
+    color: $text-small-color;
+ }
+}
+
+.header{
+    @include flexbox(row, space-between);
+    background-color: $box-bg-color;
+    .heading{
+        font-size: 2rem;
+    }
+    .icon{
+        color: $text-small-color;
+        font-size: 2rem;
+    }
+}
+
+.card{
+    @include flexbox(column, space-between);
+    .top{
+    @include flexbox(row, space-between);
+     .left{
+    @include flexbox(row, space-between);
+     }
+    }
+}
