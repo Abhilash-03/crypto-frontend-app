@@ -1,6 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #edf1f4;
   color: #adb6c7;
+  font-family: sans-serif;
 }
 
 .app {
@@ -20,6 +27,8 @@ body {
   flex-direction: row;
   padding: 0.5rem;
   background-color: #ffffff;
+  padding: 2rem;
+  position: relative;
 }
 .header .heading {
   font-size: 2rem;
@@ -27,14 +36,49 @@ body {
 .header .icon {
   color: #adb6c7;
   font-size: 2rem;
+  cursor: pointer;
 }
-
-.card {
+.header .h-menu {
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  background-color: #ffffff;
+  padding: 2rem;
+  font-weight: bold;
+  border-radius: 14px;
+}
+.header .h-menu p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0.5rem;
+  padding: 1rem;
+  color: black;
+  width: 200px;
+  border-bottom: 1px solid gray;
+}
+.header .h-menu p .ticon {
+  font-size: 1.4rem;
+}
+.header .h-menu p:last-child {
+  color: red;
+  border: none;
+}
+.header .h-menu p:hover {
+  background-color: #edf1f4;
+}
+
+.card, .menu, .chart, .cards {
+  max-width: 640px;
+}
+
+.card {
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 15px;
+  padding: 0 1rem;
 }
 .card .top {
   display: flex;
@@ -49,4 +93,229 @@ body {
   align-items: center;
   flex-direction: row;
   padding: 0.5rem;
+}
+.card .top .left .text {
+  color: #49596a;
+  font-weight: 600;
+  margin-left: 1rem;
+  font-size: 14px;
+}
+.card .top .left .bitcoin-icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: orange;
+  color: white;
+  padding: 10px;
+}
+.card .top .left .bitcoin-icon .icon {
+  font-size: 1.3rem;
+}
+.card .top .right {
+  font-weight: 600;
+  font-size: 14px;
+}
+.card .middle h2 {
+  color: #49596a;
+  font-family: sans-serif;
+  font-size: 2.1rem;
+  padding: 0 14px;
+}
+.card .middle .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+.card .middle .price h4 {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+.card .middle .price .pl {
+  background-color: red;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.card .toggle-icon {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 1.2rem;
+}
+.card .toggle-icon .downicon {
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+
+:is(.sell, .buy) {
+  background-color: red;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-family: sans-serif;
+  padding: 10px 5px;
+  width: 120px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+:is(.sell, .buy):hover {
+  background-color: rgb(213, 106, 106);
+}
+
+.btns .sell {
+  background-color: rgb(54, 169, 54);
+}
+.btns .sell:hover {
+  background-color: rgb(108, 186, 108);
+}
+
+.chart {
+  margin: auto;
+}
+.chart .tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+.chart .tabs p {
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+  font-size: 13px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.chart .tabs p:is(:hover, .active) {
+  background-color: #aeb8c4;
+  color: white;
+}
+.chart .chart-area {
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.chart .chart-area .units {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+.chart .chart-area .units .dot {
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  background-color: #f02656;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.chart .chart-area .units .amt {
+  font-size: 11px;
+}
+.chart .chart-area .units .amt span {
+  font-weight: 600;
+}
+.chart .chart-area .units .high .dot {
+  background-color: #17c271;
+}
+.chart .chart-area .ct-txt {
+  font-size: 12px;
+  font-weight: 500;
+  color: #49596a;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin: auto;
+  background-color: #ffffff;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.menu .micon:hover {
+  color: #4c5969;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.5rem;
+  margin: auto;
+}
+.cards .card-group {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+  padding: 1rem;
+}
+.cards .card-group .icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #199ef8;
+}
+.cards .card-group p {
+  color: #49596a;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 10px 0;
+}
+.cards .sellbtc {
+  margin-left: 10px;
+}
+.cards .buybtc {
+  margin-right: 10px;
+}
+.cards .sellbtc .icon {
+  background-color: #fc5986;
+}
+
+@media screen and (max-width: 660px) {
+  .card, .menu, .chart, .cards {
+    max-width: 440px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .card, .menu, .chart, .cards {
+    max-width: 340px;
+  }
+  .header .heading {
+    font-size: 1.6rem;
+  }
 }/*# sourceMappingURL=index.css.map */

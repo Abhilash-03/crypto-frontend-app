@@ -1,10 +1,17 @@
 @import "mixin";
 @import "variable";
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: $bg-color;
     color: $text-small-color;
-
+    font-family: $text-font;
+   
 }
 
 .app{
@@ -20,21 +27,270 @@ body{
 .header{
     @include flexbox(row, space-between);
     background-color: $box-bg-color;
+    padding: 2rem;
+    position: relative;
+
     .heading{
         font-size: 2rem;
     }
     .icon{
         color: $text-small-color;
         font-size: 2rem;
+        cursor: pointer;
+    }
+    .h-menu{
+      position: absolute;
+      right: 10px;
+      top: 70px;
+      background-color: $box-bg-color;
+      padding: 2rem;
+      font-weight: bold;
+      border-radius: 14px;
+      p{
+          @include flexbox(row, space-between);
+          padding: 1rem;
+        color: black;
+        width: 200px;
+        border-bottom: 1px solid gray;
+        .ticon{
+            font-size: 1.4rem;
+        }
+        &:last-child{
+            color: red;
+            border: none;
+        }
+        &:hover{
+            background-color: $bg-color;
+        }
+      }
     }
 }
 
+.card, .menu, .chart, .cards {
+    max-width: 640px;
+
+}
+
 .card{
-    @include flexbox(column, space-between);
+    background-color: $box-bg-color;
+    // max-width: 340px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 15px;
+    padding: 0 1rem;
     .top{
     @include flexbox(row, space-between);
      .left{
     @include flexbox(row, space-between);
+    .text{
+        color: $text-big-color;
+        font-weight: 600;
+        margin-left: 1rem;
+        font-size: 14px;
+    }
+    .bitcoin-icon{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: orange;
+        color: white;
+        padding: 10px;
+        .icon{
+            font-size: 1.3rem;
+        }
+    }
      }
+     .right{
+        font-weight: 600;
+        font-size: 14px;
+     }
+    }
+    .middle{
+        h2{
+            color: $text-big-color;
+            font-family: $text-font;
+            font-size: 2.1rem;
+            padding: 0 14px;
+        }
+        .price{
+            @include flexbox(row, space-between);
+            h4{
+                font-size: 1.2rem;
+                margin-left: .5rem;
+
+            }
+            .pl{
+                background-color: red;
+                color: white;
+                padding: 4px 10px;
+                border-radius: 20px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+
+    }
+    .toggle-icon{
+        text-align: center;
+        font-size: 2rem;
+        padding-bottom: 1.2rem;
+       
+        .downicon{
+            cursor: pointer;
+        }
+    }
+  
+}
+
+.btns{
+    @include flexbox(row, space-between);
+}
+:is(.sell, .buy) {
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-family: $text-font;
+    padding: 10px 5px;
+    width: 120px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(213, 106, 106);
+    }
+}
+
+.btns .sell {
+    background-color: rgb(54, 169, 54);
+    &:hover{
+        background-color: rgb(108, 186, 108);
+    }
+}
+
+.chart{
+    // max-width: 340px;
+    margin: auto;
+    .tabs{
+        @include flexbox(row, space-between);
+        p{
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: all .3s ease-in-out;
+            font-size: 13px;
+            border-radius: 20px;
+            font-weight: 500;
+            &:is(:hover, .active) {
+                background-color: #aeb8c4;
+                color: white;
+            }
+        }
+    }
+
+    .chart-area{
+      background-color: $box-bg-color;
+      border-radius: 15px;
+      overflow: hidden;
+      .units{
+        @include flexbox(row, space-between);
+        margin: 1rem;
+         .dot{
+            display: inline-block;
+            height: 6px;
+            width: 6px;
+            background-color: #f02656;
+            border-radius: 100%;
+            margin-right: 5px;
+        }
+        .amt{
+            font-size: 11px;
+            span{
+                font-weight: 600;
+            }
+        }
+        .high .dot{
+            background-color: #17c271;
+        }
+      }
+      .ct-txt{
+        font-size: 12px;
+        font-weight: 500;
+        color: $text-big-color;
+      }
+    
+    }
+}
+
+.menu{
+    @include flexbox(row, space-between);
+    font-size: 1.6rem;
+    // max-width: 340px;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin: auto;
+    background-color: $box-bg-color;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .micon:hover{
+        color: #4c5969;
+    }
+}
+
+.cards{
+    @include flexbox(row, center);
+    // max-width: 340px;
+    margin: auto;
+    .card-group{
+        background-color: $box-bg-color;
+        border-radius: 12px;
+        width: 100%;
+        margin: 1rem 0;
+        @include flexbox(column, center);
+        padding: 1rem;
+        .icon{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            font-size: 1.2rem;
+            background-color: #199ef8;
+        }
+        p{
+            color: $text-big-color;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+    }
+    .sellbtc{
+        margin-left: 10px;
+    }
+    .buybtc{
+        margin-right: 10px;
+    }
+    .sellbtc .icon{
+        background-color: #fc5986;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .card, .menu, .chart, .cards {
+        max-width: 440px;
+    
+    }
+}
+@media screen and (max-width: 540px) {
+    .card, .menu, .chart, .cards {
+        max-width: 340px;
+    
+    }
+    .header .heading {
+        font-size: 1.6rem;
     }
 }
