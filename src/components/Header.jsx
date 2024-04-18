@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CgRemove } from "react-icons/cg";
 import { HiUpload } from "react-icons/hi";
 import { PiDeviceTabletSpeakerBold } from "react-icons/pi";
+import { LuSplitSquareHorizontal } from "react-icons/lu";
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -24,7 +25,7 @@ const Header = () => {
           <div className="h-menu">
             <p className="m-row">
               <span className="text">Edit</span>
-              <span><CgRemove className="ticon" /></span>
+              <span><LuSplitSquareHorizontal className="ticon" /></span>
             </p>
             <p className="m-row">
               <span className="text">Courier info</span>

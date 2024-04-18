@@ -1,24 +1,32 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Tooltip,  ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { week, day, month, year } from "../data/cryptodata";
 
-const data = [
-    { value: 118 },
-    {  value: 210 },
-    { value: 280 },
-    {  value: 210 },
-    {  value: 213},
-    {  value: 119 },
-  ];
-// const data = week;
-  const gradientColors = ['#fc8f15', '#ffc63f'];
+const gradientColors = ['#fc8f15', '#ffc63f'];
 
 const Chart = () => {
- 
     const [activeTab, setActiveTab] = useState('week')
+    const [data, setData] = useState(week);
+
+      useEffect(() => {
+        if(activeTab === 'day') {
+          setData(day);
+        } else if(activeTab === 'month') {
+          setData(month);
+        }
+        else if(activeTab === 'year') {
+          setData(year);
+        } 
+        else {
+          setData(week);
+        }
+      }, [activeTab])
+     
     const handleTab = (e) => {
-      setActiveTab(e.target.id)
+      setActiveTab(e.target.id);
     }
+
+    const val = data.map(val => val.value);
 
     return (
     <section className="chart">
@@ -36,11 +44,11 @@ const Chart = () => {
         <div className="units">
             <p className="low">
                 <span className="dot"></span>
-                <span className="amt">Lower: <span>$4.895</span></span>
+                <span className="amt">Lower: <span>${Math.min(...val)}</span></span>
             </p>
             <p className="high">
                 <span className="dot"></span>
-                <span className="amt">Higher: <span>$6.897</span></span>
+                <span className="amt">Higher: <span>${Math.max(...val)}</span></span>
             </p>
         </div>
         <ResponsiveContainer width="100%" height={110} >
@@ -54,7 +62,7 @@ const Chart = () => {
         </defs>
          
             <Tooltip />
-            <Area type="monotone"  dataKey="value" strokeWidth={'3'} stroke="url(#lineGradient)" activeDot={{ r: 8, stroke: 'none' }}fill="#ffdfbf"/>
+            <Area type="monotone"  dataKey="value" strokeWidth={'3'} stroke="url(#lineGradient)" activeDot={{ r: 8, stroke: 'none' }} fill="#ffdfbf"/>
             <circle cx="20" cy="86" r="4" fill="#ffa629" stroke="url(#lineGradient)" />
             <text x="30" y="10" dy="80" className="ct-txt">
               1BTC = $5.483
