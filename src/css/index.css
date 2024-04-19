@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +8,11 @@
 body {
   background-color: #edf1f4;
   color: #adb6c7;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .app {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .app h1 {
   color: #49596a;
@@ -117,7 +118,7 @@ body {
 }
 .card .middle h2 {
   color: #49596a;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 2.1rem;
   padding: 0 14px;
 }
@@ -133,17 +134,17 @@ body {
   margin-left: 0.5rem;
 }
 .card .middle .price .pl {
-  background-color: red;
+  background-color: #ef215f;
   color: white;
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 15px;
-  font-weight: bold;
 }
 .card .toggle-icon {
   text-align: center;
   font-size: 2rem;
   padding-bottom: 1.2rem;
+  font-weight: 600;
 }
 .card .toggle-icon .downicon {
   cursor: pointer;
@@ -151,7 +152,7 @@ body {
 
 .btns {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   padding: 0.5rem;
@@ -162,8 +163,9 @@ body {
   border: none;
   border-radius: 20px;
   font-size: 1rem;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 10px 5px;
+  margin: 0 10px;
   width: 120px;
   color: white;
   font-weight: 500;
@@ -224,7 +226,8 @@ body {
   margin-right: 5px;
 }
 .chart .chart-area .units .amt {
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 500;
 }
 .chart .chart-area .units .amt span {
   font-weight: 600;
@@ -233,9 +236,9 @@ body {
   background-color: #17c271;
 }
 .chart .chart-area .ct-txt {
-  font-size: 12px;
-  font-weight: 500;
   color: #49596a;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .menu {

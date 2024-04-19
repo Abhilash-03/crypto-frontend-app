@@ -62,7 +62,7 @@ const Chart = () => {
         </defs>
          
             <Tooltip />
-            <Area type="monotone"  dataKey="value" strokeWidth={'3'} stroke="url(#lineGradient)" activeDot={{ r: 8, stroke: 'none' }} fill="#ffdfbf"/>
+            <Area type="monotone"  dataKey="value" strokeWidth={'3'} stroke="url(#lineGradient)" activeDot={{ r: 8 }} fill="#ffedd3"/>
             <circle cx="20" cy="86" r="4" fill="#ffa629" stroke="url(#lineGradient)" />
             <text x="30" y="10" dy="80" className="ct-txt">
               1BTC = $5.483

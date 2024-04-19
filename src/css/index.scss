@@ -1,5 +1,6 @@
 @import "mixin";
 @import "variable";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&&display=swap');
 
 *{
     margin: 0;
@@ -120,12 +121,11 @@ body{
 
             }
             .pl{
-                background-color: red;
+                background-color: #ef215f;
                 color: white;
                 padding: 4px 10px;
                 border-radius: 20px;
                 font-size: 15px;
-                font-weight: bold;
             }
         }
 
@@ -134,6 +134,7 @@ body{
         text-align: center;
         font-size: 2rem;
         padding-bottom: 1.2rem;
+        font-weight: 600;
        
         .downicon{
             cursor: pointer;
@@ -143,7 +144,7 @@ body{
 }
 
 .btns{
-    @include flexbox(row, space-between);
+    @include flexbox(row, center);
 }
 :is(.sell, .buy) {
     background-color: red;
@@ -152,6 +153,7 @@ body{
     font-size: 1rem;
     font-family: $text-font;
     padding: 10px 5px;
+    margin: 0 10px;
     width: 120px;
     color: white;
     font-weight: 500;
@@ -203,7 +205,8 @@ body{
             margin-right: 5px;
         }
         .amt{
-            font-size: 11px;
+            font-size: 13px;
+            font-weight: 500;
             span{
                 font-weight: 600;
             }
@@ -213,9 +216,9 @@ body{
         }
       }
       .ct-txt{
-        font-size: 12px;
-        font-weight: 500;
         color: $text-big-color;
+        font-size: 15px;
+        font-weight: 700;
       }
     
     }

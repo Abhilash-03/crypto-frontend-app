@@ -1,7 +1,8 @@
-import { FaBitcoinSign, FaChevronUp } from "react-icons/fa6";
-import { FaChevronDown } from "react-icons/fa";
+import { FaBitcoinSign } from "react-icons/fa6";
 import Button from "./Button";
 import { useState } from "react";
+import { TbChevronCompactDown, TbChevronCompactUp } from "react-icons/tb";
+
 const Card = () => {
   const [toggle, setToggle] = useState(false);
   return (
@@ -24,9 +25,9 @@ const Card = () => {
       </div>
       <p className="toggle-icon">
        { !toggle ?
-        <FaChevronDown className="downicon" onClick={() => setToggle(!toggle)} />
+        <TbChevronCompactDown className="downicon" onClick={() => setToggle(!toggle)} />
         :
-        <FaChevronUp className="downicon" onClick={() => setToggle(!toggle)} />}
+        <TbChevronCompactUp className="downicon" onClick={() => setToggle(!toggle)} />}
         </p>
 { toggle &&
       <div className="btns">
